@@ -1,0 +1,15 @@
+.vscode
+.github
+./api-specs
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+build/
+dist/
+.env
+.env.example
+.gitignore
+.DS_Store
+.DS_Store?
+*.md
