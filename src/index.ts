@@ -7,8 +7,17 @@ import SyntheticAccounts from "./synthetic_accounts.js";
 import TransfersService from "./transfers.js";
 import CustomersService from "./customers.js";
 import TransactionsService from "./transactions.js";
-import ResourcesService from "./resources.js";
-import ExtendedResourcesService from "./extended_resources.js";
+import PoolsService from "./pools.js";
+import ProductsService from "./products.js";
+import CustomerProductsService from "./customer_products.js";
+import CustodialAccountsService from "./custodial_accounts.js";
+import TransactionEventsService from "./transaction_events.js";
+import SyntheticLineItemsService from "./synthetic_line_items.js";
+import CustodialLineItemsService from "./custodial_line_items.js";
+import VirtualReferenceNumbersService from "./virtual_reference_numbers.js";
+import ReturnsService from "./returns.js";
+import CombinedTransfersService from "./combined_transfers.js";
+import CustomerActivitiesService from "./customer_activities.js";
 import { getNewlineConfig } from "./config.js";
 const baseNewlineUrl: string = getNewlineConfig().base_url;
 
@@ -28,16 +37,46 @@ async function main() {
   const transfers = new TransfersService(baseNewlineUrl, token);
   const customers = new CustomersService(baseNewlineUrl, token);
   const transactions = new TransactionsService(baseNewlineUrl, token);
-  const resources = new ResourcesService(baseNewlineUrl, token);
-  const extendedResources = new ExtendedResourcesService(baseNewlineUrl, token);
+  const pools = new PoolsService(baseNewlineUrl, token);
+  const products = new ProductsService(baseNewlineUrl, token);
+  const customerProducts = new CustomerProductsService(baseNewlineUrl, token);
+  const custodialAccounts = new CustodialAccountsService(baseNewlineUrl, token);
+  const transactionEvents = new TransactionEventsService(baseNewlineUrl, token);
+  const syntheticLineItems = new SyntheticLineItemsService(
+    baseNewlineUrl,
+    token,
+  );
+  const custodialLineItems = new CustodialLineItemsService(
+    baseNewlineUrl,
+    token,
+  );
+  const virtualReferenceNumbers = new VirtualReferenceNumbersService(
+    baseNewlineUrl,
+    token,
+  );
+  const returns = new ReturnsService(baseNewlineUrl, token);
+  const combinedTransfers = new CombinedTransfersService(baseNewlineUrl, token);
+  const customerActivities = new CustomerActivitiesService(
+    baseNewlineUrl,
+    token,
+  );
 
   // Register services
   syntheticAccounts.register(server);
   transfers.register(server);
   customers.register(server);
   transactions.register(server);
-  resources.register(server);
-  extendedResources.register(server);
+  pools.register(server);
+  products.register(server);
+  customerProducts.register(server);
+  custodialAccounts.register(server);
+  transactionEvents.register(server);
+  syntheticLineItems.register(server);
+  custodialLineItems.register(server);
+  virtualReferenceNumbers.register(server);
+  returns.register(server);
+  combinedTransfers.register(server);
+  customerActivities.register(server);
 
   server.tool(
     "get-newline-auth-token",
