@@ -1,0 +1,11 @@
+# Lines starting with '#' are comments.
+# Each line is a file pattern followed by one or more owners.
+
+# make sure that consumer devops approves
+# changes to .jenkins/*jenkins files
+.jenkins/*.jenkins @fitb-embeddedapi/pipeline-engineering-approvers
+
+# You can also use email addresses if you prefer.
+
+
+* @fitb-embeddedapi/embedded-devops
