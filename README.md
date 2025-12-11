@@ -1,3 +1,4 @@
+
 # Newline Model Context Protocol (MCP) Server
 
 Let your AI agents interact with the Newline Banking API by using our MCP server.
@@ -77,7 +78,7 @@ Add the following to your `.vscode/mcp.json` file in your workspace. To learn mo
   "servers": {
     "special-mcp-server": {
       "command": "npx",
-      "args": ["git+https://github.com/newline-mcp-server/newline-mcp-server"],
+      "args": ["git+https://github.com/newline53/newline-mcp-server"],
       "env": {
         "NEWLINE_HMAC_KEY": "${env:NEWLINE_HMAC_KEY}",
         "NEWLINE_PROGRAM_ID": "${env:NEWLINE_PROGRAM_ID}",
